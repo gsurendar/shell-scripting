@@ -18,3 +18,23 @@ spec:
       - name: ${appname}
         image:${appname}: ${appversion}
         - containerPort: ${app-port}
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:nginx-deployment
+  labels:
+    app:nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app:nginx
+    metadata:
+      labels:
+        app:nginx
+      containers:
+      - name:nginx
+        image:nginx: ${appversion}
+        - containerPort:80
