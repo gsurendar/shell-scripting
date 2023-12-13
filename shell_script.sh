@@ -37,3 +37,4 @@ echo
 echo "Username: ${USERNAME}"
 echo "Password: ${PASSWORD}"
 
+shell scripting for variable
